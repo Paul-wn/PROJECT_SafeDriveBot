@@ -203,32 +203,6 @@ def linebot():
     body = request.get_data(as_text=True)                    
     try:
         json_data = json.loads(body)                         
-        access_token = 'oBE0/hWRQqMVkNZXXbTKhBeBVA3IDjsE7WOA3SXtkmcwQRT+/nigb2xzoVp5InwWGljuCRw78QMTvOKHrQb16Ov6dyAnxaTDbWBUhM7pe1QzPIFFtXnKUvv9vklnJ0Lw2Scid7OfQ9M1vRIDjPFQ0wdB04t89/1O/w1cDnyilFU=' 
-        secret = '33ffe8ae4acd6532eb2acd4857bb3a67'
-        line_bot_api = LineBotApi(access_token)              
-        handler = WebhookHandler(secret)                     
-        signature = request.headers['X-Line-Signature']      
-        handler.handle(body, signature)                      
-        msg = json_data['events'][0]['message']['text']      
-        tk = json_data['events'][0]['replyToken']
-        response_msg = compute_response(msg)       
-        line_bot_api.reply_message( tk, TextSendMessage(text=response_msg) ) 
-        print(msg, tk) 
-    except:
-        print(body)         
-
-    return 'OK'                 
-if __name__ == '__main__':
-    app.run(port=5000 , debug= True)
-
-
-
-
-@app.route("/", methods=['POST'])
-def linebot():
-    body = request.get_data(as_text=True)                    
-    try:
-        json_data = json.loads(body)                         
         access_token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' 
         secret = 'xxxxxxxxxxxxxxxxxxxxxxxxxx'
         line_bot_api = LineBotApi(access_token)              
